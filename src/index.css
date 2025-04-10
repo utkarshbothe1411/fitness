@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light Mode */
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 text-gray-900;
+  }
+}
+@layer components {
+  select {
+    @apply relative z-50 bg-white dark:bg-gray-800;
+  }
+}
+
+/* Dark Mode */
+.dark body {
+  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white;
+}
+
+/* Cards: White in Light Mode, Black in Dark Mode */
+.card {
+  @apply bg-white dark:bg-gray-900 shadow-lg rounded-lg p-6 transition-all duration-300;
+}
+
+/* Navigation Links */
+.nav-link {
+  @apply px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-lg shadow-md hover:scale-105 transition;
+}
+
+/* Hover Effects */
+.card-hover {
+  @apply transition-transform duration-300 hover:scale-[1.05] cursor-pointer shadow-md;
+}
+
+.card-hover:hover {
+  box-shadow: 0px 4px 20px rgba(150, 100, 255, 0.3);
+}
+
+select {
+  position: relative;
+  z-index: 50; /* increase if needed */
+  background-color: white; /* to avoid transparency issues */
+}
+
+body {
+  @apply bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300;
+}
+
+/* index.css */
+body {
+  @apply bg-white text-gray-800 transition-colors duration-300;
+}
+
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
